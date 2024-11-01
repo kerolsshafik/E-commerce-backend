@@ -1,0 +1,134 @@
+{
+  "info": {
+    "name": "API Routes",
+    "description": "Collection of API routes for user registration, login, cart, wishlist, and checkout.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Your Name\", \"email\":\"your_email@example.com\", \"password\":\"your_password\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/register",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "register" ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"your_email@example.com\", \"password\":\"your_password\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/login",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "login" ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Cart Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"product_id\":1, \"quantity\":2}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/cart",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "cart" ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Wishlist Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"product_id\":1}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/wishlist",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "wishlist" ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Checkout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"cart_id\":1, \"address\":\"Your Address\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/checkout",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "checkout" ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

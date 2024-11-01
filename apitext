@@ -1,0 +1,18 @@
+tep 1: Set Up Postman
+Open Postman.
+Create a new collection by clicking on the Collections tab on the left sidebar and then clicking on + New Collection.
+Name your collection, for example, "E-commerce API".
+
+Step 2: Add Requests to the Collection
+Products Endpoints
+    GET /products
+
+    Method: GET
+    URL: http://your-api-url/api/products
+    Description: Retrieve a list of all products.
+
+    POST /products
+
+    Method: POST
+    URL: http://your-api-url/api/products
+    Description: Create a new product.
